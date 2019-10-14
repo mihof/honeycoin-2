@@ -1,13 +1,51 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(66, 66, 66);
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Quicksand';
+  padding-top: 5%;
+  word-wrap: break-word;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.logo{
+  width: 200px;
+  height: 200px;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.WalletInfo {
+  width: 500px;
+}
+
+.Block {
+  border: 1px solid rgb(255, 138, 2);
+  padding: 5%;
+  margin: 3%;
+}
+
+.Transaction {
+  padding: 5%;
+}
+
+.Login, .Signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5%;
+  width: 100%;
+}
+
+.ConductTransaction, .TransactionPool {
+  margin: 10%;
+}
+
+a, a:hover {
+  color: #e66;
+  text-decoration: underline;
 }
