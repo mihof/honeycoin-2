@@ -29,7 +29,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "npm run start & npm run start-redis && cross-env ENV='development' nodemon index.js",
+    "start-redis": "redis-server --daemonize yes",
+    "stop-redis": "redis-cli shutdown"
   },
   "eslintConfig": {
     "extends": "react-app"
