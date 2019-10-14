@@ -12,6 +12,12 @@ const TransactionMiner = require('./app/transaction-miner');
 
 require('dotenv').config();
 require('./config/database');
+require('./config/auth');
+
+function checkAuth(req, res, next) {
+  if (req.user) return next();
+  return res.status(401).json({msg: 'Not Authorized'});
+}
 
 const isDevelopment = process.env.ENV === 'development';
 
@@ -32,7 +38,6 @@ app.use(logger('dev'));
 app.use(express.json());
 
 app.use(bodyParser.json());
-app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname,  'build')));
 
 app.use('/api/users', require('./routes/api/users'));
@@ -41,7 +46,7 @@ app.get('/api/blocks', (req, res) => {
   res.json(blockchain.chain);
 });
 
-app.post('/api/transact', (req, res) => {
+app.post('/api/transact', checkAuth, (req, res) => {
   const { amount, recipient } = req.body;
   let transaction = transactionPool
     .existingTransaction({ inputAddress: wallet.publicKey });
@@ -65,18 +70,18 @@ app.post('/api/transact', (req, res) => {
   res.json({ type: 'success', transaction });
 });
 
-app.post('/api/mine', (req, res) => {
+app.post('/api/mine', checkAuth, (req, res) => {
   const { data } = req.body;
   blockchain.addBlock({ data });
   pubsub.broadcastChain();
   res.redirect('/api/blocks');
 });
 
-app.get('/api/transaction-pool-map', (req, res) => {
+app.get('/api/transaction-pool-map', checkAuth, (req, res) => {
   res.json(transactionPool.transactionMap);
 });
 
-app.get('/api/mine-transactions', (req, res) => {
+app.get('/api/mine-transactions', checkAuth, (req, res) => {
   transactionMiner.mineTransactions();
 
   res.redirect('/api/blocks');
