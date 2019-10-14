@@ -18,6 +18,7 @@ class TransactionPool extends Component {
     fetch(`${document.location.origin}/api/mine-transactions`)
       .then(response => {
         if (response.status === 200) {
+          alert('success');
           this.props.history.push('/blocks');
         } else {
           alert('The mine-transactions block request did not complete.');

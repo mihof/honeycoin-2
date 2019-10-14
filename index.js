@@ -46,7 +46,7 @@ app.get('/api/blocks', (req, res) => {
   res.json(blockchain.chain);
 });
 
-app.post('/api/transact', checkAuth, (req, res) => {
+app.post('/api/transact', (req, res) => {
   const { amount, recipient } = req.body;
   let transaction = transactionPool
     .existingTransaction({ inputAddress: wallet.publicKey });
@@ -77,11 +77,11 @@ app.post('/api/mine', checkAuth, (req, res) => {
   res.redirect('/api/blocks');
 });
 
-app.get('/api/transaction-pool-map', checkAuth, (req, res) => {
+app.get('/api/transaction-pool-map', (req, res) => {
   res.json(transactionPool.transactionMap);
 });
 
-app.get('/api/mine-transactions', checkAuth, (req, res) => {
+app.get('/api/mine-transactions', (req, res) => {
   transactionMiner.mineTransactions();
 
   res.redirect('/api/blocks');
