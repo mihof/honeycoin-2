@@ -32,7 +32,7 @@
     "dev": "npm run start & npm run start-redis && cross-env ENV='development' nodemon index.js",
     "start-redis": "redis-server --daemonize yes",
     "stop-redis": "redis-cli shutdown",
-    "heroku-postbuild": "npm rebuild && npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "12.6.0"
   }
 }
