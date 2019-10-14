@@ -27,12 +27,12 @@ Check the site out [here](https://honeycoin-2.herokuapp.com/)
   * Pagination
 
 ### Screenshots:
-  [Imgur](https://i.imgur.com/NxzywdI.png)
-  [Imgur](https://i.imgur.com/MheHjBY.png)
-  [Imgur](https://i.imgur.com/XYsg9Q3.png)
-  [Imgur](https://i.imgur.com/HuTJ0ub.png)
-  [Imgur](https://i.imgur.com/mEzQJJB.png)
-  [Imgur](https://i.imgur.com/2PDP68m.png)
-  [Imgur](https://i.imgur.com/7A9edr2.png)
-  [Imgur](https://i.imgur.com/xTstnNE.png)
+  ![Imgur](https://i.imgur.com/NxzywdI.png)
+  ![Imgur](https://i.imgur.com/MheHjBY.png)
+  ![Imgur](https://i.imgur.com/XYsg9Q3.png)
+  ![Imgur](https://i.imgur.com/HuTJ0ub.png)
+  ![Imgur](https://i.imgur.com/mEzQJJB.png)
+  ![Imgur](https://i.imgur.com/2PDP68m.png)
+  ![Imgur](https://i.imgur.com/7A9edr2.png)
+  ![Imgur](https://i.imgur.com/xTstnNE.png)
 
